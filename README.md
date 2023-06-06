@@ -23,3 +23,5 @@ docker-compose up
 Once the Interface is up and running, you can access it through your web browser by going to [http://localhost:5000/](http://localhost:5000/). 
 You can access the backend documentation by going to [http://localhost:8000/docs/](http://localhost:8000/docs/).
 
+make sure your connected to the robot router `AhmedBinMajid` WiFi
+
