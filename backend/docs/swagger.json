@@ -1,0 +1,141 @@
+{
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"NavReq": {
+				"properties": {
+					"x": {
+						"type": "number",
+						"format": "double"
+					},
+					"y": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"x",
+					"y"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"LocRes": {
+				"properties": {
+					"x": {
+						"type": "number",
+						"format": "double"
+					},
+					"y": {
+						"type": "number",
+						"format": "double"
+					},
+					"theta": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"x",
+					"y",
+					"theta"
+				],
+				"type": "object",
+				"additionalProperties": false
+			}
+		},
+		"securitySchemes": {}
+	},
+	"info": {
+		"title": "backend",
+		"version": "1.0.0",
+		"license": {
+			"name": "ISC"
+		},
+		"contact": {}
+	},
+	"openapi": "3.0.0",
+	"paths": {
+		"/nav": {
+			"post": {
+				"operationId": "GoToGoal",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/NavReq"
+								}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/NavReq"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/loc": {
+			"get": {
+				"operationId": "GetPos",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/LocRes"
+								}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": []
+			}
+		},
+		"/robot/start": {
+			"post": {
+				"operationId": "Start",
+				"responses": {
+					"204": {
+						"description": "No content"
+					}
+				},
+				"security": [],
+				"parameters": []
+			}
+		},
+		"/robot/stop": {
+			"post": {
+				"operationId": "Stop",
+				"responses": {
+					"204": {
+						"description": "No content"
+					}
+				},
+				"security": [],
+				"parameters": []
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/"
+		}
+	]
+}
